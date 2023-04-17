@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>1.两数之和</title>
+    <link href="/Algorithm/1.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C.html"/>
+    <url>/Algorithm/1.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h1><ul><li>HashMap的应用</li></ul><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">twoSum</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> target)</span> </span>&#123;<br>        unordered_map&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt; map;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span> ; i &lt; nums.<span class="hljs-built_in">size</span>() ; ++i)<br>        &#123;<br>            <span class="hljs-keyword">auto</span> it = map.<span class="hljs-built_in">find</span>(target - nums[i]);<br>            <span class="hljs-keyword">if</span>(map.<span class="hljs-built_in">find</span>(target - nums[i]) != map.<span class="hljs-built_in">end</span>())<br>            &#123;<br>                <span class="hljs-keyword">return</span> &#123;it-&gt;second , i&#125;;<br>            &#125;<br>            map[nums[i]] = i;<br>        &#125;<br>        <span class="hljs-keyword">return</span> &#123;&#125;;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-keyword">use</span> std::collections::HashMap;<br><br><span class="hljs-keyword">impl</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">pub</span> <span class="hljs-keyword">fn</span> <span class="hljs-title function_">two_sum</span>(nums: <span class="hljs-type">Vec</span>&lt;<span class="hljs-type">i32</span>&gt;, target: <span class="hljs-type">i32</span>) <span class="hljs-punctuation">-&gt;</span> <span class="hljs-type">Vec</span>&lt;<span class="hljs-type">i32</span>&gt; &#123;<br>        <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">map</span> = HashMap::<span class="hljs-title function_ invoke__">with_capacity</span>(nums.<span class="hljs-title function_ invoke__">len</span>());<br>        <span class="hljs-title function_ invoke__">for</span> (index,value) <span class="hljs-keyword">in</span> nums.<span class="hljs-title function_ invoke__">iter</span>().<span class="hljs-title function_ invoke__">enumerate</span>() &#123;<br>            <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> <span class="hljs-variable">Some</span>(sub_index) = map.<span class="hljs-title function_ invoke__">get</span>(&amp;(target - value))<br>            &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-built_in">vec!</span>[*sub_index <span class="hljs-keyword">as</span> <span class="hljs-type">i32</span>, index <span class="hljs-keyword">as</span> <span class="hljs-type">i32</span>]<br>            &#125;<br>            <span class="hljs-keyword">else</span> &#123;<br>                map.<span class="hljs-title function_ invoke__">insert</span>(value, index);<br>            &#125;<br>        &#125;<br>        <span class="hljs-built_in">vec!</span>[]<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Algorithm</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
